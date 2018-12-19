@@ -1,0 +1,12 @@
+server:
+  port: 10881
+
+spring:
+  application:
+    name: client
+
+logging:
+  path: /home/admin/var/client/
+  level:
+    root: info
+    org.springframework.web: info

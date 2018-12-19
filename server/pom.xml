@@ -15,4 +15,9 @@
     <name>server Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
+
+
+    <build>
+        <finalName>server</finalName>
+    </build>
 </project>

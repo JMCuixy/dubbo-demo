@@ -1,0 +1,12 @@
+server:
+  port: 10880
+
+spring:
+  application:
+    name: server
+
+logging:
+  path: /home/admin/var/server/
+  level:
+    root: info
+    org.springframework.web: info
