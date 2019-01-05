@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <version>2.1.1.RELEASE</version>
     </parent>
 
     <properties>
@@ -41,17 +41,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-        <!--devtools-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
         <!--dubbo-->
         <dependency>
-            <groupId>com.alibaba.spring.boot</groupId>
+            <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>2.0.0</version>
+            <version>0.2.0</version>
         </dependency>
     </dependencies>
 
@@ -90,6 +84,5 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
 </project>

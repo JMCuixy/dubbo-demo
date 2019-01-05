@@ -1,12 +1,89 @@
 server:
-  port: 10880
+  port: 8081
 
 spring:
   application:
-    name: server
+    name: dubbo-client
 
 logging:
-  path: /home/admin/var/server/
+  path: /home/admin/var/dubbo-client/
   level:
     root: info
     org.springframework.web: info
+
+dubbo:
+  application:
+    name: dubbo-client
+    version: 1.0.0.local
+    logger: slf4j
+    # QOS — Quality of Service，可以通过一些命令来返回响应的结果，telnet localhost 22222
+    qos-port: 22221
+    qos-enable: true
+  config:
+    # 是否支持多Dubbo配置 Bean 绑定,默认false
+    multiple: true
+  scan:
+    base-packages: org.dubbo.client
+  protocol:
+    # 协议 dubbo、rmi、http、hession
+    name: dubbo
+    # 端口 dubbo:20880、rmi:1099、http hession:80、-1选择一个未被使用的端口
+    port: -1
+    # 线程池类型 fixed/cached
+    threadpool: fixed
+    # 服务线程大小
+    threads: 200
+    # io 线程池大小 —— cpu个数 +1
+    iothreads: 5
+    # 服务提供方 最大可接受连接数
+    accepts: 100
+    # 请求及响应数据包大小限制，单位：字节
+    payload: 8388608
+    # 协议编码方式
+    codec: dubbo
+    # dubbo 协议为 hessian2，rmi 协议为 java，http协议为 json
+    serialization: hessian2
+    # 服务治理：设为true，将向logger中输出访问日志，也可填写访问日志文件路径，直接把访问日志输出到指定文件
+    accesslog: true
+    # 传输协议，dubbo协议缺省为netty，http协议缺省为servlet
+    transporter: netty
+    # 协议的消息派发方式，用于指定线程模型，比如：dubbo协议的all, direct, message, execution, connection等
+    dispatcher: all
+    # 编码
+    charset: UTF-8
+    # 网络读取缓存区大小
+    buffer: 8192
+    # 心跳包
+    heartbeat: 0
+    status: server
+  registry:
+    id: dubbo-server
+    address: zookeeper://127.0.0.1:2181
+    # 注册中心地址协议，支持dubbo, http, local三种协议，分别表示：dubbo地址、http地址、本地注册中心
+    protocol: dubbo
+    username: ""
+    password: ""
+    # 注册中心请求超时时间
+    timeout: 5000
+    # 注册中心会话超时时间（毫秒），用于检测提供者非正常断线后的脏数据
+    session: 60000
+    # 使用文件缓存注册中心地址列表及服务提供者列表，应用重启时将基于此文件恢复，注意：两个注册中心不能使用同一文件存储
+    file: /home/admin/dubbo-server
+    check: true
+    register: true
+    subscribe: true
+    consumer:
+      check: false
+      timeout: 5000
+      retries: 2
+      # 负载均衡策略，可选值：random,roundrobin,leastactive，分别表示：随机，轮询，最少活跃调用
+      loadbalance: random
+      # 每服务消费者每服务每方法最大并发调用数
+      actives: 0
+      # 集群方式，可选：failover/failfast/failsafe/failback/forking
+      cluster: failover
+      # 以调用参数为key，缓存返回结果，可选：lru, threadlocal, jcache等
+      cache: ""
+    monitor:
+      protocol: dubbo
+      address: 127.0.0.1:12080
