@@ -3,17 +3,17 @@ server:
 
 spring:
   application:
-    name: dubbo-server
+    name: dubbo-provider
 
 logging:
-  path: /home/admin/var/dubbo-server/
+  path: /home/admin/var/dubbo-provider/
   level:
     root: info
     org.springframework.web: info
 
 dubbo:
   application:
-    name: dubbo-server
+    name: dubbo-provider
     version: 1.0.0.local
     logger: slf4j
     # QOS — Quality of Service，可以通过一些命令来返回响应的结果，telnet localhost 22222
@@ -23,7 +23,7 @@ dubbo:
     # 是否支持多Dubbo配置 Bean 绑定,默认false
     multiple: true
   scan:
-    base-packages: org.dubbo.server
+    base-packages: org.dubbo
   protocol:
     # 协议 dubbo、rmi、http、hession
     name: dubbo
@@ -68,7 +68,7 @@ dubbo:
     # 注册中心会话超时时间（毫秒），用于检测提供者非正常断线后的脏数据
     session: 60000
     # 使用文件缓存注册中心地址列表及服务提供者列表，应用重启时将基于此文件恢复，注意：两个注册中心不能使用同一文件存储
-    file: /home/admin/dubbo-server
+    file: /home/admin/dubbo-provider
     check: true
     register: true
     subscribe: true

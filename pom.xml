@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <modules>
-        <module>client</module>
-        <module>server</module>
+        <module>consumer</module>
+        <module>provider</module>
     </modules>
 
     <groupId>com.dubbo.demo</groupId>

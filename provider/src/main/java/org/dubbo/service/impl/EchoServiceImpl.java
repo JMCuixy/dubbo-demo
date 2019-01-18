@@ -1,7 +1,7 @@
-package org.dubbo.server.service.impl;
+package org.dubbo.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import org.dubbo.server.service.EchoService;
+import org.dubbo.service.EchoService;
 
 /**
  * @Description:

@@ -1,4 +1,4 @@
-package org.dubbo.server;
+package org.dubbo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,12 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @Description:
  * @author: cuixiuyin
- * @date: 2018/12/19 21:30
+ * @date: 2018/12/19 21:32
  */
 @SpringBootApplication
-public class Server {
+public class Client {
 
     public static void main(String[] args) {
-        SpringApplication.run(Server.class, args);
+        SpringApplication.run(Client.class, args);
     }
 }
