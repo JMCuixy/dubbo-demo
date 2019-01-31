@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 提供方应用信息 -->
+    <dubbo:application name="provider" version="1.0.0.local" logger="slf4j"/>
+    <dubbo:annotation package="org.dubbo.service"/>
+    <!-- 用dubbo协议-->
+    <dubbo:protocol name="dubbo" port="-1" threadpool="fixed" threads="200" iothreads="5" accepts="100"
+                    payload="8388608" codec="dubbo" serialization="hessian2" accesslog="true" transporter="netty"
+                    dispatcher="all" charset="utf-8" buffer="8192" heartbeat="0"/>
+    <!-- 注册中心服务地址 -->
+    <dubbo:registry id="provider-registry" address="zookeeper://127.0.0.1:2181"
+                    username="" password="" protocol="zookeeper" timeout="5000" session="60000"
+                    file="/home/admin/dubbo-provider/dubbo-registry.properties"
+                    check="true" register="true" subscribe="true"/>
+    <dubbo:provider timeout="5000" retries="2" version="1.0.0.local"/>
+    <dubbo:consumer check="false"/>
+    <dubbo:monitor protocol="dubbo" address="127.0.0.1:10880"/>
+
+</beans>

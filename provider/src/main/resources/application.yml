@@ -1,9 +1,25 @@
 server:
-  port: 9091
+  port: 8080
 
 spring:
   application:
     name: dubbo-provider
+  profiles: spring
+
+logging:
+  path: /home/admin/var/dubbo-provider/
+  level:
+    root: info
+    org.springframework.web: info
+
+---
+server:
+  port: 8080
+
+spring:
+  application:
+    name: dubbo-provider
+  profiles: boot
 
 logging:
   path: /home/admin/var/dubbo-provider/
@@ -55,7 +71,7 @@ dubbo:
     buffer: 8192
     # 心跳包
     heartbeat: 0
-    status: server
+    status: client
   registry:
     id: dubbo-server
     address: zookeeper://127.0.0.1:2181
@@ -83,10 +99,10 @@ dubbo:
     # 集群方式，可选：failover/failfast/failsafe/failback/forking
     cluster: failover
     # 以调用参数为key，缓存返回结果，可选：lru, threadlocal, jcache等
-    cache: ""
+    cache: lru
   monitor:
     protocol: dubbo
-    address: 127.0.0.1:12080
+    address: 127.0.0.1:10880
 
 
 
