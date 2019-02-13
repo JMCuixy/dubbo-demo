@@ -1,7 +1,7 @@
 package org.dubbo;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import org.dubbo.rservice.EchoService;
+import org.dubbo.service.EchoService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package org.dubbo.rservice;
+package org.dubbo.service;
 
 /**
  * @Description:

@@ -9,4 +9,4 @@ logging:
   path: /home/admin/var/dubbo-consumer/
   level:
     root: info
-    org.springframework.web: info
+    org.springframework.web: error
