@@ -12,6 +12,12 @@ logging:
     root: info
     org.springframework.web: info
 
+zipkin:
+  url: http://192.168.3.42:9411
+  connectTimeout: 5000
+  readTimeout: 10000
+  serviceName: JMCui
+
 ---
 server:
   port: 8080

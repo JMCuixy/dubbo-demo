@@ -4,6 +4,7 @@ package org.dubbo;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ImportResource;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.ImportResource;
  * @date: 2018/12/19 21:32
  */
 @SpringBootApplication
+@EnableConfigurationProperties
 @ImportResource(value = {"classpath:dubbo-consumer.xml"})
 public class Consumer {
 

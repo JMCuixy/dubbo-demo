@@ -1,5 +1,6 @@
 package org.dubbo.service.impl;
 
+
 import com.alibaba.dubbo.config.annotation.Service;
 import org.dubbo.service.EchoService;
 
@@ -13,6 +14,6 @@ public class EchoServiceImpl implements EchoService {
 
     @Override
     public String ehco() {
-        return "echo";
+        return "Dubbo";
     }
 }

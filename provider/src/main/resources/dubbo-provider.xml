@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <!-- 提供方应用信息 -->
     <dubbo:application name="provider" version="1.0.0.local" logger="slf4j">
@@ -39,7 +39,7 @@
                     check="true"
                     register="true"
                     subscribe="true"/>
-    <dubbo:provider timeout="5000" retries="2" version="1.0.0.local"/>
+    <dubbo:provider timeout="5000" retries="2" version="1.0.0.local" filter="tracing"/>
     <dubbo:consumer check="false"/>
     <dubbo:monitor protocol="registry"/>
 </beans>
