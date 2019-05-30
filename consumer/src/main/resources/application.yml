@@ -12,7 +12,8 @@ logging:
     org.springframework.web: info
 
 zipkin:
-  url: http://192.168.3.42:9411
+  url: http://127.0.0.1:9411/api/v2/spans
   connectTimeout: 5000
   readTimeout: 10000
-  serviceName: JMCui
+  # 取样率，指的是多次请求中有百分之多少传到zipkin。例如 1.0 是全部取样，0.5是 50% 取样
+  rate: 1.0f

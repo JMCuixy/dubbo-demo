@@ -40,6 +40,6 @@
                     register="true"
                     subscribe="true"/>
     <dubbo:provider timeout="5000" retries="2" version="1.0.0.local" filter="tracing"/>
-    <dubbo:consumer check="false"/>
+    <dubbo:consumer check="false" filter="tracing"/>
     <dubbo:monitor protocol="registry"/>
 </beans>

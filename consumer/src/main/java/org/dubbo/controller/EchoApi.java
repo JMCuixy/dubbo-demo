@@ -4,6 +4,7 @@ package org.dubbo.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import org.dubbo.service.EchoService;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,8 +17,13 @@ public class EchoApi {
     @Reference
     private EchoService echoService;
 
-    @RequestMapping("/api/echo")
+    @RequestMapping("/api/get")
     public String echoApi() {
+        return echoService.ehco();
+    }
+
+    @RequestMapping(value = "/api/post", method = RequestMethod.POST)
+    public String postEchoApi() {
         return echoService.ehco();
     }
 }

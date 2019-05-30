@@ -1,7 +1,7 @@
 package org.dubbo.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -13,11 +13,15 @@ import org.springframework.context.annotation.Configuration;
 public class ZipkinProperties {
 
 
+    @Value("${spring.application.name}")
+    private String serviceName;
     private String url;
     private Long connectTimeout;
     private Long readTimeout;
-    private String serviceName;
+    private Float rate;
 
+
+    /*getter and setter*/
 
     public void setUrl(String url) {
         this.url = url;
@@ -35,6 +39,10 @@ public class ZipkinProperties {
         this.serviceName = serviceName;
     }
 
+    public void setRate(Float rate) {
+        this.rate = rate;
+    }
+
     public String getUrl() {
         return url;
     }
@@ -49,5 +57,9 @@ public class ZipkinProperties {
 
     public String getServiceName() {
         return serviceName;
+    }
+
+    public Float getRate() {
+        return rate;
     }
 }

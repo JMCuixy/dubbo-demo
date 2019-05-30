@@ -27,46 +27,51 @@ import java.util.concurrent.TimeUnit;
 public class ZipkinConfig {
 
     @Autowired
-    private ZipkinProperties properties;
+    private ZipkinProperties zipkinProperties;
 
+    /**
+     * 为了实现 dubbo rpc调用的拦截
+     *
+     * @return
+     */
     @Bean
     public Tracing tracing() {
-        Sender sender = OkHttpSender.create(properties.getUrl());
+        Sender sender = OkHttpSender.create(zipkinProperties.getUrl());
         AsyncReporter reporter = AsyncReporter.builder(sender)
-                .closeTimeout(properties.getConnectTimeout(), TimeUnit.MILLISECONDS)
-                .messageTimeout(properties.getReadTimeout(), TimeUnit.MILLISECONDS)
+                .closeTimeout(zipkinProperties.getConnectTimeout(), TimeUnit.MILLISECONDS)
+                .messageTimeout(zipkinProperties.getReadTimeout(), TimeUnit.MILLISECONDS)
                 .build();
         Tracing tracing = Tracing.newBuilder()
-                .localServiceName(properties.getServiceName())
+                .localServiceName(zipkinProperties.getServiceName())
                 .propagationFactory(ExtraFieldPropagation.newFactory(B3Propagation.FACTORY, "shiliew"))
-                .sampler(Sampler.ALWAYS_SAMPLE)
+                .sampler(Sampler.create(zipkinProperties.getRate()))
                 .spanReporter(reporter)
                 .build();
         return tracing;
     }
 
 
+    /**
+     * MVC Filter，为了实现 SpringMvc 调用的拦截
+     * @param tracing
+     * @return
+     */
     @Bean
-    public HttpTracing httpTracing(Tracing tracing) {
+    public Filter tracingFilter(Tracing tracing) {
         HttpTracing httpTracing = HttpTracing.create(tracing);
-        return httpTracing.toBuilder()
+        httpTracing.toBuilder()
                 .serverParser(new HttpServerParser() {
                     @Override
                     public <Req> String spanName(HttpAdapter<Req, ?> adapter, Req req) {
                         return adapter.path(req);
                     }
-                }).clientParser(new HttpClientParser() {
+                })
+                .clientParser(new HttpClientParser() {
                     @Override
                     public <Req> String spanName(HttpAdapter<Req, ?> adapter, Req req) {
                         return adapter.path(req);
                     }
                 }).build();
-    }
-
-    @Bean
-    public Filter tracingFilter(HttpTracing httpTracing) {
         return TracingFilter.create(httpTracing);
     }
-
-
 }
