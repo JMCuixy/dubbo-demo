@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: dubbo-consumer
+  security:
+    basic:
+      path: /swagger-ui.html,/v2/api-docs # 拦截的路径
+    user:
+      name: admin # 配置用户名
+      password: admin  #密码
 
 logging:
   path: /home/admin/var/dubbo-consumer/
