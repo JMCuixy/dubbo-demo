@@ -10,6 +10,19 @@ spring:
     user:
       name: admin # 配置用户名
       password: admin  #密码
+  boot:
+    admin:
+      enabled: true
+      client:
+        instance:
+          name: ${spring.application.name}
+          prefer-ip: true
+        url: http://127.0.0.1:3333
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 logging:
   path: /home/admin/var/dubbo-consumer/

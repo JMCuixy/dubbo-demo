@@ -5,6 +5,19 @@ spring:
   application:
     name: dubbo-provider
   profiles: spring
+  boot:
+    admin:
+      enabled: true
+      client:
+        instance:
+          name: ${spring.application.name}
+          prefer-ip: true
+        url: http://127.0.0.1:3333
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 logging:
   path: /home/admin/var/dubbo-provider/
