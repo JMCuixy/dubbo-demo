@@ -18,6 +18,15 @@ spring:
           name: ${spring.application.name}
           prefer-ip: true
         url: http://127.0.0.1:3333
+  redis:
+    host: 127.0.0.1
+    database: 0
+    password: xxjmcui
+    timeout: 3000
+    jedis:
+      pool:
+        max-idle: 4
+        max-active: 8
 management:
   endpoints:
     web:
