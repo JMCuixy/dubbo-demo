@@ -14,6 +14,6 @@ public class EchoServiceImpl implements EchoService {
 
     @Override
     public String ehco() {
-        return "Dubbo";
+        return "Hello Dubbo";
     }
 }
