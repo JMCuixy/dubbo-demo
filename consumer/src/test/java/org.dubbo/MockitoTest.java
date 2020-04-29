@@ -5,6 +5,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.ArgumentMatchers;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -21,12 +22,17 @@ import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.*;
 
 /**
- * @Author xiuyin.cui@luckincoffee.com
+ * @Author 1099442418@qq.com
  * @Date 2020-04-28 15:14
  * @Description 1.0
  */
 public class MockitoTest {
 
+    @Mock
+    private Integer mIntent;
+    /**
+     * 规则 MockitoRule 会自动帮我们调用 MockitoAnnotations.initMocks(this) 去实例化出注解的成员变量，我们就无需手动进行初始化了。
+     */
     @Rule
     public MockitoRule mockitoRule = MockitoJUnit.rule();
 

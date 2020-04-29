@@ -4,7 +4,7 @@ import org.junit.internal.runners.statements.ExpectException;
 import org.junit.rules.ExpectedException;
 
 /**
- * @Author xiuyin.cui@luckincoffee.com
+ * @Author 1099442418@qq.com
  * @Date 2020-04-28 18:29
  * @Description 1.0
  */
