@@ -1,6 +1,5 @@
-package org.demo;
+package org.dubbo;
 
-import org.dubbo.Provider;
 import org.dubbo.service.UnitService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @Author 1099442418@qq.com
+ * @Author xiuyin.cui@luckincoffee.com
  * @Date 2020-04-29 10:28
  * @Description 平常的单元测试
  */

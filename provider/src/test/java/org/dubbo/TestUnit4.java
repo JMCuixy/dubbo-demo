@@ -1,4 +1,4 @@
-package org.demo;
+package org.dubbo;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,13 +12,13 @@ import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.when;
 
 /**
- * @Author 1099442418@qq.com
+ * @Author xiuyin.cui@luckincoffee.com
  * @Date 2020-04-29 14:02
  * @Description 1.0
  */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({StringUtils.class})
-public class UnitTest4 {
+public class TestUnit4 {
 
     @Test
     public void test() {

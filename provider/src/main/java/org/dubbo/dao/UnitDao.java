@@ -1,7 +1,7 @@
 package org.dubbo.dao;
 
 /**
- * @Author 1099442418@qq.com
+ * @Author xiuyin.cui@luckincoffee.com
  * @Date 2020-04-29 10:25
  * @Description 单元测试 Dao 层模拟
  */

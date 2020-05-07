@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * @Author 1099442418@qq.com
+ * @Author xiuyin.cui@luckincoffee.com
  * @Date 2020-04-28 17:40
  * @Description 1.0
  */

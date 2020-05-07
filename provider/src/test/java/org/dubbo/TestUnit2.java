@@ -1,4 +1,4 @@
-package org.demo;
+package org.dubbo;
 
 import org.dubbo.dao.UnitDao;
 import org.dubbo.service.impl.UnitServiceImpl;
@@ -13,12 +13,12 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
 /**
- * @Author 1099442418@qq.com
+ * @Author xiuyin.cui@luckincoffee.com
  * @Date 2020-04-29 10:35
  * @Description 1.0
  */
 @RunWith(MockitoJUnitRunner.class)
-public class UnitTest2 {
+public class TestUnit2 {
 
     @Mock
     private UnitDao unitDao;

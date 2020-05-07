@@ -1,4 +1,4 @@
-package org.demo;
+package org.dubbo;
 
 import org.dubbo.dao.UnitDao;
 import org.junit.Assert;
@@ -13,11 +13,11 @@ import java.util.Iterator;
 import static org.mockito.Mockito.*;
 
 /**
- * @Author 1099442418@qq.com
+ * @Author xiuyin.cui@luckincoffee.com
  * @Date 2020-04-29 11:35
  * @Description 1.0
  */
-public class UnitTest3 {
+public class TestUnit3 {
 
     // 触发创建带有 @Mock 注解的对象
     @Rule public MockitoRule mockitoRule = MockitoJUnit.rule();

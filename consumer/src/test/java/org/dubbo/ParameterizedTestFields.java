@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- * @Author 1099442418@qq.com
+ * @Author xiuyin.cui@luckincoffee.com
  * @Date 2020-04-28 17:52
  * @Description 1.0
  */
