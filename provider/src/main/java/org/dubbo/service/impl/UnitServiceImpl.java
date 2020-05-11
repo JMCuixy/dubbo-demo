@@ -1,7 +1,7 @@
 package org.dubbo.service.impl;
 
-import org.dubbo.service.UnitService;
 import org.dubbo.dao.UnitDao;
+import org.dubbo.service.UnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UnitServiceImpl implements UnitService {
 
-    @Autowired
+    @Autowired(required = false)
     private UnitDao unitDao;
 
     @Override

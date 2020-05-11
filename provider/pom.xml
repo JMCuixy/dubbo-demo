@@ -96,6 +96,20 @@
             <artifactId>spring-boot-admin-starter-client</artifactId>
             <version>2.1.5</version>
         </dependency>
+
+        <!--sentinel 限流-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-dubbo-adapter</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+        <!--sentinel 控制台-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
     </dependencies>
 
 
