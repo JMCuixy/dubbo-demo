@@ -8,6 +8,7 @@
         <module>consumer</module>
         <module>provider</module>
         <module>monitor</module>
+        <module>sequence</module>
     </modules>
 
     <groupId>com.dubbo.demo</groupId>
